@@ -126,6 +126,30 @@ def comp():
         print("VIDEO COMPILED")
 
 
+def garbagecollection():
+    garbaudiotmp = "C:\\PATH\\TO\\nonwavtmp\\"
+    garbvideo = "C:\\PATH\\TO\\video\\"
+    garbaudio = "C:\\PATH\\TO\\audio\\"
+    audiotmpgarb = os.listdir(garbaudiotmp)[0]
+    vidgarb = os.listdir(garbvideo)[0]
+    audiogarb = os.listdir(garbaudio)[0]
+
+    if os.path.exists("C:\\PATH\\TO\\nonwavtmp\\" + str(audiotmpgarb)):
+        os.remove("C:\\PATH\\TO\\nonwavtmp\\" + audiotmpgarb)
+    else:
+        print("The audio tmp file does not exist")
+
+    if os.path.exists("C:\\PATH\\TO\\video\\" + str(vidgarb)):
+        os.remove("C:\\PATH\\TO\\video\\" + vidgarb)
+    else:
+        print("The video file does not exist") 
+
+    if os.path.exists("C:\\PATH\\TO\\audio\\" + str(audiogarb)):
+        os.remove("C:\\PATH\\TO\\audio\\" + audiogarb)
+    else:
+        print("The audio file does not exist") 
+        
 
 completer()
 comp()
+# garbagecollection()
